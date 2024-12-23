@@ -15,8 +15,13 @@
                     clippy
                     rustc
                     rustfmt
+                    rustup
+                    miniserve
                 ];
-                shellHook = "zsh";
+                shellHook = ''
+                export RUST_SRC_PATH=${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}
+                zsh
+                '';
             };
         }
     );

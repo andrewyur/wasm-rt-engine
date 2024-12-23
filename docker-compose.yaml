@@ -1,0 +1,9 @@
+name: wasm-rt-engine
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
