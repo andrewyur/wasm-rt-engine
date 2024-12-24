@@ -16,6 +16,8 @@
                     rustc
                     rustfmt
                     rustup
+                    wasm-pack
+                    lld_19
                     miniserve
                 ];
                 shellHook = ''
