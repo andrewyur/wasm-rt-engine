@@ -1,9 +1,10 @@
 mod state;
+mod handler;
+// cant use the module name `app` for some reason, rust-analyzer will only recognize the file if the module name is capitalized
 
+use handler::App;
 use wasm_bindgen::prelude::*;
 use web_sys::console;
-use crate::state::State;
-
 
 #[wasm_bindgen(start)]
 pub async fn run() {
@@ -11,8 +12,5 @@ pub async fn run() {
     
     console::log_1(&"testing".into());
 
-    let window = web_sys::window().expect("could not obtain window!");
-    let document = window.document().expect("could not obtain result!");
-    
-    let state = State::init(&document).await;
+    App::start().await;
 }
