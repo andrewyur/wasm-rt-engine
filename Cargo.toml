@@ -22,7 +22,8 @@ web-sys = { version = "0.3.76", features = [
     "HtmlCanvasElement",
     "ResizeObserver",
     "ResizeObserverEntry",
-    "ResizeObserverSize"
+    "ResizeObserverSize",
+    "KeyboardEvent"
 ]}
 wgpu = "23.0.1" 
 egui = "0.30.0"

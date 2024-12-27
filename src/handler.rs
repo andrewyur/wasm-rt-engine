@@ -1,5 +1,6 @@
+use gloo_events::EventListener;
 // use gloo_events::EventListener;
-use web_sys::{js_sys, ResizeObserver, ResizeObserverEntry, ResizeObserverSize};
+use web_sys::{console, js_sys, KeyboardEvent, ResizeObserver, ResizeObserverEntry, ResizeObserverSize};
 use crate::state::State;
 use wasm_bindgen::prelude::*;
 use std::cell::RefCell;
@@ -37,6 +38,20 @@ impl App {
             // not sure whether this causes a memory leak or not, but i dont ever intend to remove this during the lifetime of the page
             callback.forget();
             resize_observer.observe(state.borrow().canvas());
+        }
+
+
+        // event listeners
+        {
+            let state_clone = Rc::clone(&state);
+            EventListener::new(&document, "keydown", move |event | {
+                let keyboard_event = event.dyn_ref::<KeyboardEvent>().unwrap();
+
+                if keyboard_event.key() == " " {
+                    console::log_1(&"space pressed".into());
+                    // state_clone.borrow_mut()
+                }
+            }).forget();
         }
 
 

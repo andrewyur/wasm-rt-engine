@@ -10,15 +10,7 @@ A real time raytracing engine built with WASM, targeting the browser
 
 ## TODO
 
-- [x] set up rust/wasm profile in vscode & nix shell
-- [x] set up a crate, window manager & wasm target
-- [x] set up a static web server via docker
-- [x] get wasm-pack & bindgen working
-- [x] winit working on wasm
-- [x] dev server without docker
-- [x] remove winit
-- [x] make an app struct
-- [ ] restart with bevy
+- [ ] debounce resize function
 
 ## Dev log
 
