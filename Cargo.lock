@@ -857,6 +857,7 @@ checksum = "943aab3fdaaa029a6e0271b35ea10b72b943135afe9bffca82384098ad0e06a6"
 name = "wasm-rt-engine"
 version = "0.0.0"
 dependencies = [
+ "bytemuck",
  "console_error_panic_hook",
  "egui",
  "egui-wgpu",
