@@ -3,6 +3,8 @@ name = "wasm-rt-engine"
 version = "0.0.0"
 publish = false
 edition = "2021"
+description = "A real time raytracing engine built with wgpu targeting the browser"
+repository = "https://github.com/andrewyur/wasm-rt-engine"
 
 [build]
 target = "wasm32-unknown-unknown"
@@ -14,7 +16,22 @@ crate-type = ["cdylib", "rlib"]
 console_error_panic_hook = "0.1.7"
 wasm-bindgen = "0.2.99"
 wasm-bindgen-futures = "0.4.49"
-web-sys = { version = "0.3.76", features = [
+wgpu = "23.0.1" 
+# egui = "0.30.0"
+# egui-wgpu = "0.30.0"
+gloo-events = "0.2.0"
+bytemuck = { version = "1.16", features = [ "derive" ] }
+anyhow = "1.0.95"
+cgmath = "0.18.0"
+
+[dependencies.image]
+version = "0.24"
+default-features = false
+features = ["png", "jpeg"]
+
+[dependencies.web-sys]
+version = "0.3.76"
+features = [
     "Document",
     "Window",
     "Element",
@@ -24,10 +41,4 @@ web-sys = { version = "0.3.76", features = [
     "ResizeObserverEntry",
     "ResizeObserverSize",
     "KeyboardEvent"
-]}
-wgpu = "23.0.1" 
-egui = "0.30.0"
-egui-wgpu = "0.30.0"
-gloo-events = "0.2.0"
-bytemuck = { version = "1.16", features = [ "derive" ] }
-
+]

@@ -1,6 +1,6 @@
 # wasm-rt-engine
 
-A real time raytracing engine built with WASM, targeting the browser
+A real time raytracing engine built with wgpu targeting the browser
 
 ## Compatibility
 
@@ -11,6 +11,7 @@ A real time raytracing engine built with WASM, targeting the browser
 ## TODO
 
 - [ ] debounce resize function
+- [ ] integrate an asset loader (gltf and rhai are geared towards wasm apparently)
 
 ## Dev log
 
